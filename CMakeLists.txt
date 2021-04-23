@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+
+# set the project name
+project(Indie VERSION 1.0.0)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+include_directories(include /usr/local/include)
+
+find_package(SFML 2.5.1 COMPONENTS audio graphics window system REQUIRED)
+
+# add the executable
+add_executable(
+    Indie
+    src/main.cpp
+)
+target_link_libraries(Indie sfml-audio sfml-graphics sfml-window sfml-system)
