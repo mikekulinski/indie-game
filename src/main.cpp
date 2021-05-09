@@ -9,18 +9,18 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
     // Load a sprite to display
     sf::Texture texture;
-    if (!texture.loadFromFile("/Users/mikekulinski/indie-game/graphics/cute_image.jpeg"))
+    if (!texture.loadFromFile("../graphics/cute_image.jpeg"))
         return EXIT_FAILURE;
     sf::Sprite sprite(texture);
     // Create a graphical text to display
     sf::Font font;
-    if (!font.loadFromFile("/Users/mikekulinski/indie-game/fonts/arial.ttf"))
+    if (!font.loadFromFile("../fonts/arial.ttf"))
         return EXIT_FAILURE;
     sf::Text text("Hello SFML", font, 50);
     text.setPosition(window.getSize().x*0.5 - text.getGlobalBounds().width / 2, window.getSize().y*0.5 - text.getGlobalBounds().height);
     // Load a music to play
     sf::Music music;
-    if (!music.openFromFile("/Users/mikekulinski/indie-game/sounds/nice_music.ogg"))
+    if (!music.openFromFile("../sounds/nice_music.ogg"))
         return EXIT_FAILURE;
     // Play the music
     music.play();
