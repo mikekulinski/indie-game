@@ -14,6 +14,9 @@ find_package(SFML 2.5.1 COMPONENTS audio graphics window system REQUIRED)
 add_executable(
     Indie
     src/main.cpp
+    src/game.cpp
+    include/game.h
+    src/input.cpp
 )
 target_link_libraries(Indie sfml-audio sfml-graphics sfml-window sfml-system)
 
