@@ -1,6 +1,6 @@
 #include "character.hpp"
 
-Character::Character(){}
+Character::Character() {}
 
 Character::Character(Texture& texture) {
   sprite_.setTexture(texture);

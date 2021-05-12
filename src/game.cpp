@@ -1,7 +1,7 @@
-#include <iostream>
-#include <math.h>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include <math.h>
 
 #include "game.hpp"
 
@@ -13,18 +13,17 @@ Game::Game() {
 int Game::run() {
   sf::Texture texture;
   if (!texture.loadFromFile("../graphics/mario.png"))
-      return EXIT_FAILURE;
+    return EXIT_FAILURE;
   character_ = Character(texture);
 
-	// Start the game loop
-	while (window_.isOpen())
-	{
+  // Start the game loop
+  while (window_.isOpen()) {
     Time elapsed = clock_.restart();
 
     input();
 
     draw();
-	}
+  }
   return EXIT_SUCCESS;
 }
 
