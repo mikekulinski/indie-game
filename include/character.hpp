@@ -9,10 +9,9 @@ using namespace sf;
 
 class Character : public Drawable {
 private:
-  static const double constexpr SPEED = 10.0;
+  static const double constexpr SPEED = 20.0;
 
   Sprite sprite_;
-  Vector2i position_;
 
   virtual void draw(RenderTarget& target, RenderStates states) const;
 

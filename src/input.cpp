@@ -15,16 +15,16 @@ void Game::input() {
       case Event::KeyPressed:
         switch (event.key.code) {
           case Keyboard::Key::W:
-            std::cout << "Key Pressed: " << event.key.code << std::endl;
+            character_.moveCharacter(UP);
             break;
           case Keyboard::Key::A:
-            std::cout << "Key Pressed: " << event.key.code << std::endl;
+            character_.moveCharacter(LEFT);
             break;
           case Keyboard::Key::S:
-            std::cout << "Key Pressed: " << event.key.code << std::endl;
+            character_.moveCharacter(DOWN);
             break;
           case Keyboard::Key::D:
-            std::cout << "Key Pressed: " << event.key.code << std::endl;
+            character_.moveCharacter(RIGHT);
             break;
           
           default:

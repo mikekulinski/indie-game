@@ -21,10 +21,7 @@ int Game::run() {
 	{
     Time elapsed = clock_.restart();
 
-		// Process input
     input();
-
-    // TODO: updateCharacter();
 
     draw();
 	}
