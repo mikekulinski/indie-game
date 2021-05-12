@@ -3,26 +3,23 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
-#include "game.h"
+#include "game.hpp"
 
 Game::Game() {
-  window.create(VideoMode(800, 600), "Mike's Indie Game");
-  window.setFramerateLimit(60);
-
-  text.setCharacterSize(50);
-  text.setFillColor(Color::Black);
+  window_.create(VideoMode(800, 600), "Mike's Indie Game");
+  window_.setFramerateLimit(60);
 }
 
 int Game::run() {
-  sf::Font font;
-  if (!font.loadFromFile("../fonts/arial.ttf"))
+  sf::Texture texture;
+  if (!texture.loadFromFile("../graphics/mario.png"))
       return EXIT_FAILURE;
-  text.setFont(font);
+  character_ = Character(texture);
 
 	// Start the game loop
-	while (window.isOpen())
+	while (window_.isOpen())
 	{
-    Time elapsed = clock.restart();
+    Time elapsed = clock_.restart();
 
 		// Process input
     input();
@@ -35,9 +32,9 @@ int Game::run() {
 }
 
 void Game::draw() {
-  window.clear(Color::White);
+  window_.clear(Color::White);
 
-  window.draw(text);
+  window_.draw(character_);
 
-  window.display();
+  window_.display();
 }
