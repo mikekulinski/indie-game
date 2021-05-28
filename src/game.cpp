@@ -6,13 +6,13 @@
 #include "game.hpp"
 
 Game::Game() {
-  window_.create(VideoMode(800, 600), "Mike's Indie Game");
-  window_.setFramerateLimit(60);
+  window_.create(VideoMode(320, 180), "Mike's Indie Game");
+  window_.setFramerateLimit(144);
 }
 
 int Game::run() {
   sf::Texture texture;
-  if (!texture.loadFromFile("../graphics/mario.png"))
+  if (!texture.loadFromFile("../graphics/spritesheet.png"))
     return EXIT_FAILURE;
   character_ = Character(texture);
 

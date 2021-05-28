@@ -4,7 +4,7 @@ Character::Character() {}
 
 Character::Character(Texture& texture) {
   sprite_.setTexture(texture);
-  sprite_.scale(Vector2f(0.25, 0.25));
+  sprite_.setTextureRect(IntRect(0, 0, 16, 16));
 }
 
 void Character::draw(RenderTarget& target, RenderStates states) const {
