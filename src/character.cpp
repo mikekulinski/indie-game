@@ -14,11 +14,15 @@ void Character::draw(RenderTarget& target, RenderStates states) const {
 void Character::moveCharacter(Direction direction) {
   if (direction == UP) {
     sprite_.move(0.0, -1.0 * Character::SPEED);
+    sprite_.setTextureRect(UP_SPRITE);
   } else if (direction == DOWN) {
     sprite_.move(0.0, 1.0 * Character::SPEED);
+    sprite_.setTextureRect(DOWN_SPRITE);
   } else if (direction == LEFT) {
     sprite_.move(-1.0 * Character::SPEED, 0.0);
+    sprite_.setTextureRect(LEFT_SPRITE);
   } else {
     sprite_.move(1.0 * Character::SPEED, 0.0);
+    sprite_.setTextureRect(RIGHT_SPRITE);
   }
 }
